@@ -1,0 +1,51 @@
+[core]
+	quotepath = false
+	preloadindex = true
+	fscache = true
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	i = init
+	st = status
+	a = add
+  aa = add .
+	c = commit
+	cm = commit -m
+	pu = push
+	pl = pull
+	b = branch
+	co = checkout
+  cob = checkout -b
+	m = merge
+	f = fetch
+	d = diff
+
+	fi = flow init
+	ffs = flow feature start
+	fff = flow feature finish
+	ffpu = flow feature publish
+	ffpl = flow feature pull
+
+	frs = flow release start
+	frpu = flow release publish
+	frt = flow release track
+	frf = flow release finish 
+
+	fhs = flow hotfix start
+	fhf = flow hotfix finish
+[gc]
+	auto = 256
+[pull]
+	rebase = false
