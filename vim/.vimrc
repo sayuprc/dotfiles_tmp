@@ -16,25 +16,21 @@ if dein#load_state('~/.vim/bundles')
 
 	call dein#add('scrooloose/nerdtree')
 
+	" Ememt
+	call dein#add('mattn/emmet-vim')
+
 	" call dein#add('vim-airline/vim-airline')
 	" call dein#add('vim-airline/vim-airline-theme')
 	" call dein#add('ryanoasis/vim-devicons')
 
+	" ステータスバー
 	call dein#add('itchyny/lightline.vim')
 
+	" 括弧系補完
 	call dein#add('cohama/lexima.vim')
 	
+	" web検索
 	call dein#add('tyru/open-browser.vim')
-
-	" 背景画像
-	" call dein#add('miyakogi/seiya.vim')
-
-	"call dein#add('Shougo/deoplete.nvim')
-	"call dein#add('roxma/nvim-yarp')
-	"call dein#add('roxma/vim-hug-neovim-rpc')
-	"call dein#add('lvht/phpcd.vim')
-
-	" call dein#add('w0rp/ale')
 
 	call dein#end()
 	call dein#save_state()
@@ -124,27 +120,18 @@ nmap <leader>b <Plug>(openbrowser-smart-search)
 vmap <leader>b <Plug>(openbrowser-smart-search)
 
 "--------------------------------------
-" seiya
+" Emmet
 "--------------------------------------
-" let g:seiya_auto_enable = 1
-" highlight Normal ctermbg=none
-" highlight LineNr ctermbg=none
-" highlight SignColumn ctermbg=none
-" highlight VertSplit ctermbg=none
-" highlight NonText ctermbg=none
-
-"--------------------------------------
-" ale
-"--------------------------------------
-"let g:ale_fix_on_save = 1
-"let g:ale_linters = {
-"	\ 'php': ['phpcs', 'php']
-"	\}
+let g:user_emmet_settings = {
+\	'lang': 'ja'
+\}
 
 "--------------------------------------
 " Keymap
 "--------------------------------------
 inoremap jj <Esc>
+
+inoremap <C-m> <C-x>
 
 nnoremap j gj
 nnoremap k gk
@@ -158,10 +145,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-nnoremap <silent><Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
-
-nnoremap <Esc><Esc> :set nohlsearch<CR>
 
 nmap n nzz
 nmap N Nzz
@@ -179,6 +162,3 @@ autocmd FileType * setlocal formatoptions-=r
 autocmd FileType * setlocal formatoptions-=o
 
 autocmd FileType php setlocal tabstop=4 shiftwidth=4
-
-autocmd FileType html xml inoremap <buffer> </ </<C-x><C-o>
-
