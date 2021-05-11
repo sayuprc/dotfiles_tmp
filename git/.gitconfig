@@ -49,3 +49,33 @@
 	auto = 256
 [pull]
 	rebase = false
+================================
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	i = init
+	st = status
+	a = add
+	aa = add .
+	c = commit
+	cm = commit -m
+	pu = push
+	pl = pull
+	b = branch
+	co = checkout
+	cob = checkout -b
+	m = merge
+	f = fetch
+	d = diff
+	l = log
+	la = log --name-status
+	ls = log --oneline
+  lg = log --graph
+[merge]
+	ff = false
+	tool = vimdiff
+[pull]
+	ff = only
